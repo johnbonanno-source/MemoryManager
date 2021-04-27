@@ -1,6 +1,7 @@
 # MemoryManager
 
-
+I chose this program to use in my portfolio because I thought that it strongly demonstrated the realtionship 
+that the TLB Cache had with physical memory like a hard disk. I also thought that it demonstrated some understanding of caching and also critical thinking in coming up with a way to represent each page table. I also think that the way that the overall program functions in translating a logical address to a physical one is an example of problem solving.
 
 This memory manager program works by reading in a list of logical addresses looping from a text file. Each of the logical addresses read in 32-bit integers. First, the logical address is masked by doing a bitwise and with 0xFFFF, because 0xFFFF has sixteen 1’s, and our physical address is contained in the 16 least significant bits of our 32 bit address. Now we only have the sixteen lowest bits, we right shift by 8 to get the top 8 bits of our address for the page number.
 All that’s left to determine now is the offset, which is obtained by taking the low order 8 bits we are left with after anding the 32 bit logical address with 0xFF,  which in binary has 8 ones. 
